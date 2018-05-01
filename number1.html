@@ -14,45 +14,96 @@ background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
 }
-<<<<<<< HEAD
 .font {
   font-family: "Comic Sans MS", cursive, sans-serif;
   size: 15;
 }
-</style>
-<body background="images\background2.jpg">
-<p align="center" class="font"><font size="25">MEMES ARE GREAT</font></p>
-<iframe src="music\music2.mp3" repeat="loop"></iframe>
-=======
 .title {
 font-family: "Comic Sans MS", cursive, sans-serif;
 font-size: 60px;
-
-
 }
 </style>
 <body background="images\background4.gif">
-<p class="title" align="center" >MEMES ARE GREAT</p>
-<iframe src="music\music1.mp3" repeat="loop"></iframe>
->>>>>>> b01ad06e7ba8f09a2075969162bbcefdcbb38d55
+<p class="title" align="center" ><font color="#203163">MEMES ARE GREAT</font></p>
+<script>
+// YOU NEED TO CHANGE THE ARRAY OF SONG URLs AND
+// TITLES. Alternate MP3 file URLs and titles, in quotes
+// and separated by commas, beginning with the first song URL.
+// If you use " marks in filenames or titles, or put a \
+// in front of them.
+var songs = new Array(
+  "music/music1.mp3",
+  "Yodelling Kid - Remix",
+  "music/music2.mp3",
+  "Pumped Up Kicks - Foster The People",
+  "music/music3.mp3",
+  "Nowadays - Lil Skies",
+  "music/music4.mp3",
+  "Africa - Toto"
+);
 
-<h2 align="center"><font color="#203163">Tits Like A Bird<font></h2>
+function switchSongs(i)
+{
+  var file = songs[i * 2];
+  var title = songs[i * 2 + 1];
+  var element = document.getElementById('mysound_wrapper');
+  element.innerHTML = embedSound(file);
+  var element = document.getElementById('songtitle');
+  element.innerHTML = title;
+  var selector = document.getElementById('song_selector');
+  selector.selectedIndex = i;
+  return;
+}
+
+function embedSound(sound)
+{
+  return '<embed src="' + sound + '" autostart="true" ' +
+    'width="320" height="32">';
+}
+</script>
+</head>
+<body onLoad="switchSongs(0)">
+<select name="song_selector" id="song_selector"
+  onChange="switchSongs(selectedIndex)">
+<script>
+for (i = 0; (i < songs.length); i += 2) {
+  var file = songs[i];
+  var title = songs[i + 1];
+  document.write('<option value="' +
+    i + '">' +
+    title + '</option>\n');
+}
+</script>
+</select>
+<p>
+<h4>Now Playing: <span id="songtitle"></span></h4>
+<br>
+<p>
+<div id="mysound_wrapper">
+<noscript>
+Our music player requires that you enable JavaScript in your
+web browser's preferences.
+</noscript>
+</div>
+</div>
+
+
+<h2 class="font" align="center"><font color="#203163">Tits Like A Bird<font></h2>
 <img border="5" class="center" src="images\meme1.png">
 
-<h2 align="center"><font color="#203163">Wash It Nigga</font></h2>
+<h2 class="font" align="center"><font color="#203163">Wash It Nigga</font></h2>
 <img border="5" class="center" src="images\meme2.png">
 
-<h2 align="center"><font color="#203163">Fuck You Normies</font></h2>
+<h2 class="font" align="center"><font color="#203163">Fuck You Normies</font></h2>
 <img border="5" class="center" src="images\meme3.jpg">
 
-<h2 align="center"><font color="#203163">(clap) (clap) (clap) (clap)</font></h2>
+<h2 class="font" align="center"><font color="#203163">(clap) (clap) (clap) (clap)</font></h2>
 <img border="5" class="center" src="images\meme4.jpg">
 
-<h2 align="center"><font color="#203163">Bitch your man it a piece of shit</font></h2>
+<h2 class="font" align="center"><font color="#203163">Bitch your man it a piece of shit</font></h2>
 <img border="5" class="center" src="images\meme6.jpg">
 
-
-<h2 align="center"><font color="#203163">Fuck out of here bitch ass cat, <br> before you get yote.</font></h2>
+<h2 class="font" align="center"><font color="#203163">Fuck out of here bitch ass cat, <br> before you get yote.</font></h2>
 <img border="5" class="center" src="images\meme7.jpg">
 
 
